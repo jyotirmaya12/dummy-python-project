@@ -1,2 +1,2 @@
-dummy
-awscli>=0.1
+awscli
+
