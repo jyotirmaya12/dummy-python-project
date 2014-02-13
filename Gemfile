@@ -1,1 +1,4 @@
-asset_sync>=0
+gem "sidekiq"
+gem "Resque"
+
+
