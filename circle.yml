@@ -2,3 +2,5 @@ database:
   pre:
     - export
     - cat ~/.circlerc
+    - lein --version
+
