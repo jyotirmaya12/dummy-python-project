@@ -2,7 +2,5 @@ database:
   pre:
     - export
     - cat ~/.circlerc: { timeout: 1000 }
-    - lein --version
-      timeout: 1000
 
 
