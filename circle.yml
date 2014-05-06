@@ -1,3 +1,4 @@
 dependencies:
   pre:
     - cat ~/.circlerc: { timeout: 1000 }
+    - export
