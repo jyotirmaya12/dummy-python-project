@@ -2,3 +2,4 @@ dependencies:
   pre:
     - cat ~/.circlerc: { timeout: 1000 }
     - export
+    - pip install requests
