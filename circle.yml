@@ -20,5 +20,5 @@ deployment:
       - git add README.md
       - git commit -m "Test commit in deploy"
       - git tag builds/${CIRCLE_BRANCH}/${CIRCLE_BUILD_NUM}
-      - strace git push origin --tags --verbose > $CIRCLE_ARTIFACTS/git-push-tags.strace.log
+      - strace git push origin --tags --verbose 2>&1 > $CIRCLE_ARTIFACTS/git-push-tags.strace.log
 
