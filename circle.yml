@@ -2,10 +2,12 @@ test:
   override:
     - echo "good test"
 
-deploy:
-  master:
-    - date >> README.md
-    - git add README.md
-    - git commit -m "Test commit in deploy"
-    - git tag builds/${CIRCLE_BRANCH}/${CIRCLE_BUILD_NUM}
-    - git push origin --tags --verbose
+deployment:
+  testing:
+    branch: master
+    commands:
+      - date >> README.md
+      - git add README.md
+      - git commit -m "Test commit in deploy"
+      - git tag builds/${CIRCLE_BRANCH}/${CIRCLE_BUILD_NUM}
+      - git push origin --tags --verbose
