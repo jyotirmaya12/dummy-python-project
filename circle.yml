@@ -1,9 +1,11 @@
-machine:
-  python:
-    version: system
+test:
+  override:
+    - echo "good test"
 
-dependencies:
-  pre:
-    - cat ~/.circlerc: { timeout: 1000 }
-    - export
-    - pip install requests
+deploy:
+  master:
+    - date >> README.md
+    - git add README.md
+    - git commit -m "Test commit in deploy"
+    - git tag builds/${CIRCLE_BRANCH}/${CIRCLE_BUILD_NUM}
+    - git push origin --tags --verbose
