@@ -1,3 +1,11 @@
+machine:
+  services:
+    - mysql
+
+#database:
+#  override:
+#    - echo ""
+
 test:
   override:
     - echo "good test"
@@ -12,4 +20,4 @@ deployment:
       - git add README.md
       - git commit -m "Test commit in deploy"
       - git tag builds/${CIRCLE_BRANCH}/${CIRCLE_BUILD_NUM}
-      - git push origin --tags --verbose
+      - strace git push origin --tags --verbose
