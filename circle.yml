@@ -7,6 +7,8 @@ deployment:
     branch: master
     commands:
       - date >> README.md
+      - git config --global user.email "emile@circleci.com"
+      - git config --global user.name "Emile Snyder"
       - git add README.md
       - git commit -m "Test commit in deploy"
       - git tag builds/${CIRCLE_BRANCH}/${CIRCLE_BUILD_NUM}
