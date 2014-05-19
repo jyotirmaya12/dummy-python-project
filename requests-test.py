@@ -1,3 +1,4 @@
 import requests
 
-print "ok"
+print("ok")
+
