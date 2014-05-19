@@ -2,6 +2,10 @@ machine:
   python:
     version: 3.3.2
 
+dependencies:
+  pre:
+    - pip install requests
+
 test:
   override:
     - echo "force good"
@@ -13,7 +17,6 @@ deployment:
   testing:
     branch: python3
     commands:
-      - pip install requests
       - python requests-test.py
 
 
