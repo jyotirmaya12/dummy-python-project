@@ -1,24 +1,22 @@
 machine:
-  services:
-    - mysql
+  versions:
+    - python 3.3.2
 
-#database:
-#  override:
-#    - echo ""
+dependencies:
+  pre:
+    - pip install requests
 
 test:
   override:
-    - echo "good test"
+    - echo "force good"
+  post:
+    - python --version
+    - pip --version
 
 deployment:
   testing:
-    branch: master
+    branch: python3
     commands:
-      - date >> README.md
-      - git config --global user.email "emile@circleci.com"
-      - git config --global user.name "Emile Snyder"
-      - git add README.md
-      - git commit -m "Test commit in deploy"
-      - git tag builds/${CIRCLE_BRANCH}/${CIRCLE_BUILD_NUM}
-      - strace git push origin --tags --verbose 2>&1 > $CIRCLE_ARTIFACTS/git-push-tags.strace.log
+      - python requests-test.py
+
 
