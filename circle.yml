@@ -1,6 +1,6 @@
 machine:
-  versions:
-    - python 3.3.2
+  python:
+    version: 3.3.2
 
 dependencies:
   pre:
