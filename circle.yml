@@ -1,6 +1,9 @@
 machine:
   python:
     version: 3.3.2
+  environment:
+    FOO=$HOME
+    BAR=$FOO-bar
 
 test:
   override:
