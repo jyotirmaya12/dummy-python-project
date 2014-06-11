@@ -1,24 +1,11 @@
 machine:
+  python:
+    version: 2.7.5
   services:
-    - mysql
-
-#database:
-#  override:
-#    - echo ""
-
-test:
-  override:
-    - echo "good test"
-
-deployment:
-  testing:
-    branch: master
-    commands:
-      - date >> README.md
-      - git config --global user.email "emile@circleci.com"
-      - git config --global user.name "Emile Snyder"
-      - git add README.md
-      - git commit -m "Test commit in deploy"
-      - git tag builds/${CIRCLE_BRANCH}/${CIRCLE_BUILD_NUM}
-      - strace git push origin --tags --verbose 2>&1 > $CIRCLE_ARTIFACTS/git-push-tags.strace.log
-
+    - cassandra
+    - redis
+    - postgresql
+dependencies:
+  pre:
+    - pip install setuptools==4.0.1
+    - pip install -r requirements/prod.txt
