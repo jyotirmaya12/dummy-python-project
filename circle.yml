@@ -3,5 +3,7 @@ machine:
     version: 2.7.5
 test:
   pre:
-    - aws
+    - aws --version
+    - aws s3 --version
+
 
