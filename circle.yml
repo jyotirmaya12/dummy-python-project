@@ -1,9 +1,9 @@
 machine:
   python:
-    version: 2.7.5
+    version: 2.6.6
 test:
   pre:
     - aws --version
     - aws s3 --version
-  post:
-    - dd if=/dev/urandom of=$CIRCLE_ARTIFACTS/junk.bin bs=1MB count=19
+  override:
+    - python -v
