@@ -1,7 +1,4 @@
 test:
-  pre:
-    - aws --version
-    - aws s3 --version
   override:
     - python -V
     - coverage run test.py
