@@ -7,3 +7,7 @@ test:
     - aws s3 --version
   override:
     - python -v
+    - coverage run test.py
+  post:
+    - coverage html -d $CIRCLE_ARTIFACTS/coverage
+
