@@ -1,3 +1,7 @@
+dependencies:
+  post:
+    - pwd
+
 test:
   override:
     - python -V
