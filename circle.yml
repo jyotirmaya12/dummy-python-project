@@ -1,4 +1,4 @@
 test:
   override:
-    - echo "passing"
+    - echo "passing":
         timeout: 600
