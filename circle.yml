@@ -1,16 +1,4 @@
-dependencies:
-  pre:
-    - curl -o $HOME/google_appengine_1.9.7.zip https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.7.zip
-    - unzip -q -d $HOME $HOME/google_appengine_1.9.7.zip
-
 test:
   override:
     - echo "passing"
-
-deployment:
-  appengine:
-    branch: master
-    commands:
-      - echo $APPENGINE_PASSWORD | $HOME/google-appengine/appcfg.py update --email=$APPENGINE_EMAIL --passin .
-
-
+        timeout: 600
