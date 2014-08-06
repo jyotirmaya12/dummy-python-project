@@ -1,3 +1,7 @@
+machine:
+  python:
+    2.7.4
+
 test:
   override:
     - echo "passing":
