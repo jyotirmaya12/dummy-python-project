@@ -6,5 +6,6 @@ test:
   override:
     - echo "passing":
         timeout: 600
-    - ./check-nltk.py
+    - ./slow-output.py
+
 
