@@ -3,6 +3,8 @@ machine:
     version: 2.7.5
 
 test:
+  pre:
+    - ls -la ~/.ssh
   override:
     - echo "passing":
         timeout: 600
