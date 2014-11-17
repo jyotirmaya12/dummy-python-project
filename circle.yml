@@ -6,6 +6,12 @@ test:
   override:
     - echo "passing":
         timeout: 600
+        parallel: true
     - ./slow-output.py
 
-
+deployment:
+  foobar:
+    branch: master
+    commands:
+      - echo "running in parallel?":
+          parallel: true
