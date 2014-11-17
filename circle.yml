@@ -8,12 +8,13 @@ test:
   override:
     - echo "passing":
         timeout: 600
+    - echo "running on $CIRCLE_NODE"
+        parallel: true
     - ./slow-output.py
 
 
 deploy:
   foobar:
-    branch: master
+    branch: [.*]
     commands:
       - echo "running on $CIRCLE_NODE"
-          parallel: true
