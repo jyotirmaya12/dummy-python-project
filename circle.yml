@@ -11,3 +11,9 @@ test:
     - ./slow-output.py
 
 
+deploy:
+  foobar:
+    branch: master
+    commands:
+      - echo "running on $CIRCLE_NODE"
+          parallel: true
