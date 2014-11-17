@@ -13,7 +13,7 @@ test:
     - ./slow-output.py
 
 
-deploy:
+deployment:
   foobar:
     branch: [.*]
     commands:
