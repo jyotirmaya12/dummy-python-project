@@ -13,7 +13,8 @@ deployment:
     branch: master
     commands:
       - ls -l ~/.netrc
-      - grep machine ~/.netrc
+      - cat ~/.netrc | ./redacter.py
+      - git push git@heroku.com:dummy-heroku-app.git $CIRCLE_SHA1:master
       - heroku run date --app dummy-heroku-app
       - echo "running in parallel?":
           parallel: true
