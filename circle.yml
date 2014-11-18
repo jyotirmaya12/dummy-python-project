@@ -7,13 +7,12 @@ test:
     - echo "passing":
         timeout: 600
         parallel: true
-    - ./slow-output.py
 
 deployment:
   foobar:
     branch: master
     commands:
       - ls -l ~/.netrc
-      - heroku run date
+      - heroku run date --app dummy-heroku-app
       - echo "running in parallel?":
           parallel: true
