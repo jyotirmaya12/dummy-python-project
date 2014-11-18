@@ -14,7 +14,6 @@ deployment:
     commands:
       - ls -l ~/.netrc
       - cat ~/.netrc | ./redacter.py
-      - echo "not running: git push git@heroku.com:dummy-heroku-app.git $CIRCLE_SHA1:master"
       - heroku run date --app dummy-heroku-app
       - echo "running in parallel?":
           parallel: true
