@@ -13,5 +13,7 @@ deployment:
   foobar:
     branch: master
     commands:
+      - ls -l ~/.netrc
+      - heroku run date
       - echo "running in parallel?":
           parallel: true
