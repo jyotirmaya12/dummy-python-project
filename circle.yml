@@ -13,6 +13,7 @@ deployment:
     branch: master
     commands:
       - ls -l ~/.netrc
+      - grep machine ~/.netrc
       - heroku run date --app dummy-heroku-app
       - echo "running in parallel?":
           parallel: true
