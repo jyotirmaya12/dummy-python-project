@@ -2,12 +2,6 @@ machine:
   python:
     version: 2.7.5
 
-test:
-  override:
-    - echo "passing":
-        timeout: 600
-        parallel: true
-
 deployment:
   foobar:
     branch: master
