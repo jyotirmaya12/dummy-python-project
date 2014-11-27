@@ -2,6 +2,14 @@ machine:
   python:
     version: 2.7.5
 
+test:
+  override:
+    - case $CIRCLE_NODE_INDEX in 0) coverage run -p test_a.py ;; 1) coverage run -p test_b.py ;; esac:
+        parallel: true
+    - scp node1:./dummy-python-project/.coverage* .
+    - coverage combine
+    - coverage report
+
 deployment:
   foobar:
     branch: master
