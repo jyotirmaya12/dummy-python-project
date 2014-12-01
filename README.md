@@ -1,2 +1,4 @@
+[![Circle CI](https://circleci.com/gh/esnyder/dummy-python-project.svg?style=svg)](https://circleci.com/gh/esnyder/dummy-python-project)
 
-Fri Jul 25 08:01:48 PDT 2014
+Dummy repo to mess with python project on circleci.com
+
