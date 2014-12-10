@@ -2,7 +2,7 @@ test:
   override:
     - case $CIRCLE_NODE_INDEX in 0) coverage run -p test_a.py ;; 1) coverage run -p test_b.py ;; esac:
         parallel: true
-    - scp node1:./$CIRCLE_PROJECT_REPONAME/.coverage* .
+    - scp .coverage* node0:./$CIRCLE_PROJECT_REPONAME/: {parallel: true}
     - coverage combine
     - coverage report
     - coverage html -d $CIRCLE_ARTIFACTS/htmlcov
