@@ -1,0 +1,4 @@
+test:
+  post:
+    - ls -la: {parallel: false}
+    - coverage report: {parallel: false}
