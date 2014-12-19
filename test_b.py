@@ -4,7 +4,7 @@ import nltk
 
 class TestB(unittest.TestCase):
     def setUp(self):
-        print nltk.util.sqrt(22)
+        print nltk.util.unicode_literals
 
     def tearDown(self):
         print "rab"
