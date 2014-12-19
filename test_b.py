@@ -1,9 +1,11 @@
 import unittest
 import b
+from nltk.stem import WordNetLemmatizer
 
 class TestB(unittest.TestCase):
     def setUp(self):
-        print "oof"
+        wnl = WordNetLemmatizer()
+        print wnl.lemmatize('dogs')
 
     def tearDown(self):
         print "rab"
