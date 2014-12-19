@@ -1,4 +1,14 @@
 test:
-  post:
-    - ls -la: {parallel: false}
-    - coverage report: {parallel: false}
+  pre:
+    - ls -la
+    - ls -la ..
+  override:
+    - case $CIRCLE_NODE_INDEX in 0) coverage run -p --source . test_a.py ;; 1) coverage run -p --source . test_b.py ;; esac:
+        parallel: true
+    - scp .coverage* node0:./$CIRCLE_PROJECT_REPONAME/: {parallel: true}
+    - coverage combine
+    - coverage report
+    - coverage html -d $CIRCLE_ARTIFACTS/htmlcov
+    - coveralls
+
+
