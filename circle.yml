@@ -1,5 +1,10 @@
+machine:
+  environment:
+    MY_BUILD_NUM: $CIRCLE_BUILD_NUM
+
 test:
   pre:
+    - echo $MY_BUILD_NUM
     - ls -la
     - ls -la ..
   override:
