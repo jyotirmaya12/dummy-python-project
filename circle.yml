@@ -1,6 +1,6 @@
 machine:
   python:
-    version: jython-2.5.1
+    version: system
   environment:
     MY_BUILD_NUM: $CIRCLE_BUILD_NUM
 
