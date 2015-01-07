@@ -1,6 +1,6 @@
 machine:
   python:
-    version: system
+    version: 2.7
   environment:
     MY_BUILD_NUM: $CIRCLE_BUILD_NUM
 
