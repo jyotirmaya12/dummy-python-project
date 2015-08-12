@@ -7,9 +7,11 @@ test:
     - echo $MY_BUILD_NUM
     - ls -la
     - ls -la ..
-  override:
-    - case $CIRCLE_NODE_INDEX in 0) coverage run -p --source . test_a.py ;; 1) coverage run -p --source . test_b.py ;; esac:
+  post:
+    - coverage run -p --source . :
         parallel: true
+        files:
+          - test_*.py
     - scp .coverage* node0:./$CIRCLE_PROJECT_REPONAME/: {parallel: true}
     - coverage combine
     - coverage report
