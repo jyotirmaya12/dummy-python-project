@@ -1,3 +1,3 @@
 coverage
 python-coveralls
-nltk==3.0.0
+nltk==3.4.2
